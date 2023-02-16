@@ -8,8 +8,7 @@ router.get("/", (req, res) => {
 router.post("/", (req, res) => {
   // console.log(req.body);
   if (!req.body.pic) {
-    // Default image if one is not provided
-    req.body.pic = "public/images/blue-eyed-pup.jpg";
+    req.body.pic = "/images/blue-eyed-pup.jpg";
   }
   if (!req.body.city) {
     req.body.city = "Anytown";
