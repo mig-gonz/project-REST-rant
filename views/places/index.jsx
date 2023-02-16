@@ -19,6 +19,12 @@ function index(data) {
       <main>
         <h1>Places to Rant About</h1>
         <div className="row">{placesFormatted}</div>
+
+        <div>
+          <a href="/">
+            <button className="btn btn-primary">HOME</button>
+          </a>
+        </div>
       </main>
     </Def>
   );

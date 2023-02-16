@@ -14,6 +14,11 @@ function error404() {
             <a href="https://unsplash.com/">Unsplash</a>
           </div>
         </div>
+        <div>
+          <a href="/">
+            <button className="btn btn-primary">HOME</button>
+          </a>
+        </div>
       </main>
     </Def>
   );
