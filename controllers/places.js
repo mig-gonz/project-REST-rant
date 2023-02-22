@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const db = require("../models");
 
+// index
 router.get("/", (req, res) => {
   db.Place.find()
     .then((places) => {
@@ -42,10 +43,12 @@ router.put("/:id", (req, res) => {
   res.send("PUT /places/:id stub");
 });
 
+// delete
 router.delete("/:id", (req, res) => {
   res.send("DELETE /places/:id stub");
 });
 
+// edit
 router.get("/:id/edit", (req, res) => {
   res.send("GET edit form stub");
 });
