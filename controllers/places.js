@@ -13,6 +13,7 @@ router.get("/", (req, res) => {
     });
 });
 
+// create
 router.post("/", (req, res) => {
   db.Place.create(req.body)
     .then(() => {
@@ -24,10 +25,12 @@ router.post("/", (req, res) => {
     });
 });
 
+//  new
 router.get("/new", (req, res) => {
   res.render("places/new");
 });
 
+//  show
 router.get("/:id", (req, res) => {
   db.Place.findById(req.params.id)
     .then((place) => {
@@ -39,13 +42,14 @@ router.get("/:id", (req, res) => {
     });
 });
 
-router.put("/:id", (req, res) => {
-  res.send("PUT /places/:id stub");
-});
-
 // delete
 router.delete("/:id", (req, res) => {
   res.send("DELETE /places/:id stub");
+});
+
+//  put
+router.put("/:id", (req, res) => {
+  res.send("PUT /places/:id stub");
 });
 
 // edit
