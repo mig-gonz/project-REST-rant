@@ -42,9 +42,14 @@ router.get("/:id", (req, res) => {
     });
 });
 
-// delete
+// delete route
 router.delete("/:id", (req, res) => {
-  res.send("DELETE /places/:id stub");
+  db.Place.deleteOne({ id: req.params.id })
+    .then(() => res.redirect("/places"))
+    .catch((err) => {
+      console.log(err);
+      res.status(404).render("error404");
+    });
 });
 
 //  put
