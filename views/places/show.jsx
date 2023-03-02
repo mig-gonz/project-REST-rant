@@ -2,7 +2,6 @@ const React = require("react");
 const Def = require("../default");
 
 function show(data) {
-  console.log(data);
   let comments = <h3>No comments yet!</h3>;
   let rating = <h3>Not yet rated</h3>;
   if (data.place.comments.length) {
@@ -10,8 +9,12 @@ function show(data) {
       let sumRatings = data.place.comments.reduce((tot, c) => {
         return tot + c.stars;
       }, 0);
-      let averageRating = sumRatings / data.place.comments.length;
-      rating = <h3>{Math.round(averageRating)} stars</h3>;
+      let averageRating = Math.round(sumRatings / data.place.comments.length);
+      let stars = "";
+      for (let i = 0; 1 < averageRating; i++) {
+        stars = +"⭐️";
+      }
+      rating = <h3>{stars} stars</h3>;
       return (
         <div className="border">
           <h2 className="rant">{c.rant ? "Rant! ðŸ˜¡" : "Rave! ðŸ˜»"}</h2>
